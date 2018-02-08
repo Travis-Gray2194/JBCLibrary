@@ -20,13 +20,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="main.html">RecipeBook</a>
+                <a class="navbar-brand" th:href="@{/}">MC Library</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="addbookform.html">Add Book</a></li>
-                <li><a href="borrowbookform.html">Borrow Book</a></li>
-                <li><a href="returnbookform.html">Return a Book</a></li>
-                <li><a href="showbooklist.html">Show All Books</a></li>
+                <li><a th:href="@{/AddBook}">Add Book</a></li>
+                <li><a th:href="@{/ListBook}">Show our Books</a></li>
+                <!--<li><a th:href="@{/update/{id}(id=${readingbook.id})}">Borrow a Book</a></li>-->
+                <!--<li><a th:href="@{/update/{id}(id=${readingbook.id})}">Return a Book</a></li>-->
+                <!--<li><a th:href="@{/detail/{id}(id=${readingbook.id})}">Show All Books</a></li>-->
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -36,9 +37,10 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="addbook.html">Add Book</a></li>
-                        <li><a href="borrowbook.html">Borrow Book</a></li>
-                        <li><a href="returnbook.html">Return Book</a></li>
+                        <li><a th:href="@{/AddBook}">Add Book</a></li>
+                        <!--<li><a th:href="@{/update/{id}(id=${readingbook.id})}">Borrow a Book</a></li>-->
+                        <!--<li><a th:href="@{/update/{id}(id=${readingbook.id})}">Return a Book</a></li>-->
+                        <!--<li><a th:href="@{/detail/{id}(id=${readingbook.id})}">Show All Books</a></li>-->
                         <li role="separator" class="divider"></li>
                         <li role="separator" class="divider"></li>
                     </ul>
@@ -62,19 +64,19 @@
         </p>
 
 
-        <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/ShowFlagGallery}" target="_self">
+        <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/AddBook}" target="_self">
             Add a Book!
         </a></p>
 
-        <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/Gallery}" target="_self">
-            Borrow a Book!
-        </a></p>
+        <!--<p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/Gallery}" target="_self">-->
+            <!--Borrow a Book!-->
+        <!--</a></p>-->
 
-        <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/Gallery}" target="_self">
-            Checkout a Book!
-        </a></p>
+        <!--<p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/Gallery}" target="_self">-->
+            <!--Checkout a Book!-->
+        <!--</a></p>-->
 
-        <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/Gallery}" target="_self">
+        <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/ListBook}" target="_self">
             See all Avalible Books!
         </a></p>
     </div>

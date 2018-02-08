@@ -13,32 +13,39 @@
     </div>
     <div class="row body">
         <!--Dont forget form thymeleaf actions nesscary for thymeleaf to see route from controller and objects from model-->
-        <form th:action="@{/addBook}" th:object="${book}" method="post">
+        <form th:action="@{/AddBook}" th:object="${readingbook}" method="post">
             <ul>
 
-                <li>
+                <li> <input type="hidden" th:field="*{id}" />
                     <p class="left">
                         <label for="booktitle" >Book Title</label>
                         <!--Make sure to use proper thymeleaf attributes for forms and fields not th:text-->
-                        <input th:field="${book.title}" type="text" name="booktitle" placeholder="booktitle" />
+                        <input th:field="${readingbook.title}" type="text" name="booktitle" placeholder="booktitle" />
                     </p>
                     <p class="pull-right">
                         <label for="bookauthour">Book Authour</label>
-                        <input th:field="${book.authour}"  type="text" name="bookauthour" placeholder="bookauthour" />
+                        <input th:field="${readingbook.authour}"  type="text" name="bookauthour" placeholder="bookauthour" />
                     </p>
                 </li>
 
                 <li>
                     <p>
                         <label for="yearofpublication">Year of Publication <span class="req">*</span></label>
-                        <input th:field="${book.yearofpublication}" type="yearofpublication" name="yearofpublication" placeholder="yearofpublication" />
+                        <input th:field="${readingbook.yearofpublication}" type="yearofpublication" name="yearofpublication" placeholder="yearofpublication" />
                     </p>
                 </li>
 
                 <li>
                     <p>
                         <label for="ISBN Number">ISBN Number <span class="req">*</span></label>
-                        <input th:field="${book.ISBN}" type="ISBN" name="ISBN" placeholder="ISBN" />
+                        <input th:field="${readingbook.ISBN}" type="ISBN" name="ISBN" placeholder="ISBN" />
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <label for="Checkout Status">Book Checkout <span class="req">*</span></label>
+                        <input th:field="${readingbook.isCheckedOut}" type="checkoutstatus" name="checkoutstatus" placeholder="checkoutstatus" />
                     </p>
                 </li>
                 <li><div class="divider"></div></li>

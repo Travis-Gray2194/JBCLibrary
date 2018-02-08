@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <title>Show Books</title>
+</head>
+<body>
+
+<!--The getter and setter methods you created are used to read and modify the values of the Course object. For-->
+<!--example, [[($course.title)]] calls the value of course.getInstructor, and displays it in the html fi-->
+<!--eld. Make sure you-->
+<!--create getters and setters for each field, otherwise you will not be able ta set or access values for the objects-->
+<!--you create.-->
+<a th:href="@{/ListBook}">Show All Books</a><br />
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Authour</th>
+        <th>Year of Publication</th>
+        <td>ISBN Number</td>
+        <td>Book Checkout</td>
+    </tr>
+
+    <tr th:each="readingbook : ${readingbooklist}">
+        <td th:text="${readingbook.title}"></td>
+        <td th:text="${readingbook.authour}"></td>
+        <td th:text="${readingbook.yearofpublication}"></td>
+        <td th:text="${readingbook.ISBN}"></td>
+        <td th:text="${readingbook.isCheckedOut}"></td>
+
+
+        <td>
+            <a th:href="@{/update/{id}(id=${readingbook.id})}">Update</a>
+            <a th:href="@{/detail/{id}(id=${readingbook.id})}">Details</a>
+            <a th:href="@{/delete/{id}(id=${readingbook.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+
+<!--<label>Title</label><span th:text="${readingbook.title}"></span><br />-->
+<!--<label>Authour</label><span th:text="${readingbook.authour}"></span><br />-->
+<!--<label>ISBN</label><span th:text="${readingbook.ISBN}"></span><br />-->
+<!--<label>Checkout Status</label><span th:text="${readingbook.isCheckedOut}"></span><br />-->
+<!--<label>Year of Publication</label><span th:text="${readingbook.yearofpublication}"></span><br />-->
+<a th:href="@{/delete/{id}(id=${readingbook.id})}">Delete this
+    book</a>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

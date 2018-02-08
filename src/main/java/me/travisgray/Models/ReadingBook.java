@@ -28,16 +28,24 @@ public class ReadingBook {
 
     private String ISBN;
 
-    private boolean isCheckedOut;
+    private String isCheckedOut;
 
     public ReadingBook() {
     }
 
-    public ReadingBook(String title, String authour, String yearofpublication, String ISBN, boolean isCheckedOut) {
+    public ReadingBook(String title, String authour, String yearofpublication, String ISBN, String isCheckedOut) {
         this.title = title;
         this.authour = authour;
         this.yearofpublication = yearofpublication;
         this.ISBN = ISBN;
+        this.isCheckedOut = isCheckedOut;
+    }
+
+    public String getIsCheckedOut() {
+        return isCheckedOut;
+    }
+
+    public void setIsCheckedOut(String isCheckedOut) {
         this.isCheckedOut = isCheckedOut;
     }
 
@@ -49,13 +57,6 @@ public class ReadingBook {
         this.ISBN = ISBN;
     }
 
-    public boolean isCheckedOut() {
-        return isCheckedOut;
-    }
-
-    public void setCheckedOut(boolean checkedOut) {
-        isCheckedOut = checkedOut;
-    }
 
     public long getId() {
         return id;

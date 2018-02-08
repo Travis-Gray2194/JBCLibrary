@@ -52,7 +52,11 @@ public class JBCLibraryController {
 
     @GetMapping("/detail/{id}")
     public String showBook(@PathVariable("id") long id, Model model){
-        model.addAttribute("readingbook",bookRepository.findOne(id));
+//        model.addAttribute("readingbook",bookRepository.findOne(id));
+
+//        Test to see if route fine all books including new user generated book
+//        Working correctly now
+        model.addAttribute("readingbook",bookRepository.findAll());
         return "booklist";
     }
 
@@ -63,7 +67,8 @@ public class JBCLibraryController {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteBook(@PathVariable("id") long id){
+    public String deleteBook(@PathVariable("id") long id, Model model){
+        model.addAttribute("readingbook",bookRepository.findOne(id));
         bookRepository.delete(id);
         return "booklist";
     }

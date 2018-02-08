@@ -10,6 +10,7 @@
 <body>
 <table>
     <tr>
+        <td>Image Thumbnail</td>
         <td>Title</td>
         <td>Authour</td>
         <td>Year of Publication</td>
@@ -18,6 +19,7 @@
     </tr>
 
     <tr th:each="book : ${readingbook}">
+        <td><img src="http://whytoread.com/wp-content/uploads/2015/03/best-books-book-youll-ever-read.jpg?w=640" style="height: 200px"></td>
         <td th:text="${book.title}"></td>
         <td th:text="${book.authour}"></td>
         <td th:text="${book.yearofpublication}"></td>

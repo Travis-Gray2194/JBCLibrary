@@ -31,6 +31,7 @@ public class ReadingBook {
 
     private String checkoutstatus;
 
+
     public ReadingBook() {
     }
 

@@ -1,13 +1,12 @@
 package me.travisgray.Models;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by ${TravisGray} on 2/7/2018.
@@ -21,9 +20,11 @@ public class ReadingBook {
     private long id;
 
     private String title;
-
+    @NotNull
     private String authour;
 
+    @NotNull
+    @NotEmpty
     private String yearofpublication;
 
     private String ISBN;
@@ -39,6 +40,14 @@ public class ReadingBook {
         this.yearofpublication = yearofpublication;
         this.ISBN = ISBN;
         this.checkoutstatus = checkoutstatus;
+    }
+
+    public String getYearofpublication() {
+        return yearofpublication;
+    }
+
+    public void setYearofpublication(String yearofpublication) {
+        this.yearofpublication = yearofpublication;
     }
 
     public String getCheckoutstatus() {
@@ -82,12 +91,6 @@ public class ReadingBook {
         this.authour = authour;
     }
 
-    public String getYearofpublication() {
-        return yearofpublication;
-    }
 
-    public void setYearofpublication(String yearofpublication) {
-        this.yearofpublication = yearofpublication;
-    }
 
 }

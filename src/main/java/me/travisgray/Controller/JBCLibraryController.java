@@ -38,6 +38,8 @@ public class JBCLibraryController {
         return "addbookform";
     }
 
+
+
 //    Must pass created book entry here then save to repository model for thymeleaf loop
     @PostMapping("/AddBook")
     public String processBookForm(@Valid @ModelAttribute("readingbook") ReadingBook readingBook, BindingResult result, Model model){
@@ -51,15 +53,15 @@ public class JBCLibraryController {
         return "booklist";
     }
 
-//    @GetMapping("/detail/{id}")
-//    public String showBook(@PathVariable("id") long id, Model model){
-////        model.addAttribute("readingbook",bookRepository.findOne(id));
-//
-////        Test to see if route fine all books including new user generated book
-////        Working correctly now
-//        model.addAttribute("readingbook",bookRepository.findAll());
-//        return "booklist";
-//    }
+    @GetMapping("/detail/{id}")
+    public String showBook(@PathVariable("id") long id, Model model){
+//        model.addAttribute("readingbook",bookRepository.findOne(id));
+
+//        Test to see if route fine all books including new user generated book
+//        Working correctly now
+        model.addAttribute("readingbook",bookRepository.findAll());
+        return "booklist";
+    }
 
     @GetMapping("/update/{id}")
     public String updateBooks(@PathVariable("id") long id, Model model){

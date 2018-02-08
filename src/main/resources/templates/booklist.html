@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/tablestyle.css">
+    <link rel="stylesheet" href="css/tablestyle.css">
 </head>
 <body>
-<a th:href="@{/AddBook}">Add a Book</a>
 <table>
     <tr>
-        <th>Title</th>
-        <th>Authour</th>
-        <th>Year of Publication</th>
+        <td>Title</td>
+        <td>Authour</td>
+        <td>Year of Publication</td>
         <td>ISBN Number</td>
         <td>Book Checkout</td>
     </tr>
@@ -22,12 +24,27 @@
         <td th:text="${book.ISBN}"></td>
         <td th:text="${book.checkoutstatus}"></td>
         <td>
-            <a th:href="@{/update/{id}(id=${book.id})}">Return or Borrow This Book From Library</a>
+
+
+            <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/update/{id}(id=${book.id})}" target="_self">
+                Return or Borrow This Book From Library
+            </a></p>
+
+            <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/detail/{id}(id=${book.id})}" target="_self">
+                See All Books
+            </a></p>
+
+            <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/delete/{id}(id=${book.id})}" target="_self">
+                Remove this Book From The Library
+            </a></p>
+            <!--<a th:href="@{/update/{id}(id=${book.id})}">Return or Borrow This Book From Library</a>-->
             <!--<a th:href="@{/detail/{id}(id=${book.id})}">See All Books</a>-->
-            <a th:href="@{/delete/{id}(id=${book.id})}">Remove this Book From The Library</a>
+            <!--<a th:href="@{/delete/{id}(id=${book.id})}">Remove this Book From The Library</a>-->
         </td>
     </tr>
 </table>
 
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -20,6 +20,7 @@ public class ReadingBook {
     private long id;
 
     private String title;
+
     @NotNull
     private String authour;
 

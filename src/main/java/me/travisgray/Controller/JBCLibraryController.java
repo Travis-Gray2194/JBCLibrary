@@ -47,7 +47,7 @@ public class JBCLibraryController {
             return "addbookform";
         }
         bookRepository.save(readingBook);
-        System.out.println("Test to see checkout status text field being stored correctly"+readingBook.getCheckoutstatus());
+        System.out.println("Test to see checkout status text field being stored correctly"+readingBook.getCheckoutstatus().equalsIgnoreCase("Borrow"));
 //        Need to make sure to add all books to model for thymeleaf access after this route is complete
         model.addAttribute("readingbook",bookRepository.findAll());
         return "booklist";
@@ -74,6 +74,12 @@ public class JBCLibraryController {
         model.addAttribute("readingbook",bookRepository.findOne(id));
         bookRepository.delete(id);
         return "booklist";
+    }
+
+    @GetMapping("/update/booklist2/{id}")
+    public String showmodal(@PathVariable("id") long id, Model model){
+        model.addAttribute("readingbook",bookRepository.findAll());
+        return "booklist2";
     }
 
 

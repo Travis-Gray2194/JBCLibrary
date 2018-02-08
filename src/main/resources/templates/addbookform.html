@@ -12,17 +12,20 @@
         <h3>Fill out the form below to Add a Book to Library!</h3>
     </div>
     <div class="row body">
+
         <!--Dont forget form thymeleaf actions nesscary for thymeleaf to see route from controller and objects from model-->
         <form th:action="@{/AddBook}" th:object="${readingbook}" method="post">
+
             <ul>
 
-                <li> <input type="hidden" th:field="*{id}" />
+                <li>
                     <p class="left">
+                        <input type="hidden" th:field="*{id}" />
                         <label for="booktitle" >Book Title</label>
                         <!--Make sure to use proper thymeleaf attributes for forms and fields not th:text-->
                         <input th:field="${readingbook.title}" type="text" name="booktitle" placeholder="booktitle" />
                     </p>
-                    <p class="pull-right">
+                    <p class="left">
                         <label for="bookauthour">Book Authour</label>
                         <input th:field="${readingbook.authour}"  type="text" name="bookauthour" placeholder="bookauthour" />
                     </p>
@@ -45,7 +48,11 @@
                 <li>
                     <p>
                         <label for="Checkout Status">Book Checkout <span class="req">*</span></label>
-                        <input th:field="${readingbook.checkoutstatus}" type="checkoutstatus" name="checkoutstatus" placeholder="checkoutstatus" />
+                        <select th:field="${readingbook.checkoutstatus}" type="checkoutstatus" name="checkoutstatus" placeholder="checkoutstatus">
+                            <option value="Book Unavailable For Checkout">Borrow This Book</option>
+                            <option value="Book Available For Checkout">Return this Book</option>
+                            <option value="Check Other Library Requested">Check Other Library Request</option>
+                        </select>
                     </p>
                 </li>
                 <li><div class="divider"></div></li>

@@ -22,9 +22,9 @@
         <td th:text="${book.ISBN}"></td>
         <td th:text="${book.checkoutstatus}"></td>
         <td>
-            <a th:href="@{/update/{id}(id=${book.id})}">Update</a>
-            <a th:href="@{/detail/{id}(id=${book.id})}">See All Books</a>
-            <a th:href="@{/delete/{id}(id=${book.id})}">Delete</a>
+            <a th:href="@{/update/{id}(id=${book.id})}">Return or Borrow This Book From Library</a>
+            <!--<a th:href="@{/detail/{id}(id=${book.id})}">See All Books</a>-->
+            <a th:href="@{/delete/{id}(id=${book.id})}">Remove this Book From The Library</a>
         </td>
     </tr>
 </table>

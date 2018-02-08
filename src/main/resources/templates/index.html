@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8"/>
+    <!-- Latest compiled and minified css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Main</title>
+</head>
+<body>
+<div class="row">
+    <!--Nav Bar Information Collaspe-->
+    <nav class="navbar navbar-default" style="background-color:burlywood " >
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="main.html">RecipeBook</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="addbookform.html">Add Book</a></li>
+                <li><a href="borrowbookform.html">Borrow Book</a></li>
+                <li><a href="returnbookform.html">Return a Book</a></li>
+                <li><a href="showbooklist.html">Show All Books</a></li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <!--<li class="active"><a href="Injera.html">Injera <span class="sr-only">(current)</span></a></li>-->
+                <!--<li><a href="wings.html">Wings</a></li>-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="addbook.html">Add Book</a></li>
+                        <li><a href="borrowbook.html">Borrow Book</a></li>
+                        <li><a href="returnbook.html">Return Book</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li role="separator" class="divider"></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--End Nav Bar Row-->
+
+<!--Welcome Content Box-->
+<div class="row" style="margin-top: 300px">
+    <div class="col-xs-12">
+        <h1 class="cover-heading text-center" style="color: antiquewhite">Welcome to Montgromery College Libary!</h1>
+
+
+
+        <p class="lead text-center">This Library Spring Boot Application  was built by Travis Gray using HTML,CSS and Bootstrap Framework 3.3.7!.
+
+            <small>    <br> <a href="http://bootsnipp.com/iframe/g6GWQ"></a></small>
+
+        </p>
+
+
+        <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/ShowFlagGallery}" target="_self">
+            Add a Book!
+        </a></p>
+
+        <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/Gallery}" target="_self">
+            Borrow a Book!
+        </a></p>
+
+        <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/Gallery}" target="_self">
+            Checkout a Book!
+        </a></p>
+
+        <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/Gallery}" target="_self">
+            See all Avalible Books!
+        </a></p>
+    </div>
+</div>
+    <!--End Content Box-->
+
+
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>

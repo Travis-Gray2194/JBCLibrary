@@ -20,6 +20,7 @@
         <td th:text="${book.authour}"></td>
         <td th:text="${book.yearofpublication}"></td>
         <td th:text="${book.ISBN}"></td>
+        <td th:text="${book.checkoutstatus}"></td>
         <td>
             <a th:href="@{/update/{id}(id=${book.id})}">Update</a>
             <a th:href="@{/detail/{id}(id=${book.id})}">See All Books</a>

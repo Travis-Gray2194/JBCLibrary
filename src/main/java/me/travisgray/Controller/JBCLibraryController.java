@@ -45,6 +45,7 @@ public class JBCLibraryController {
             return "addbookform";
         }
         bookRepository.save(readingBook);
+        System.out.println("Test to see checkout status text field being stored correctly"+readingBook.getCheckoutstatus());
 //        Need to make sure to add all books to model for thymeleaf access after this route is complete
         model.addAttribute("readingbook",bookRepository.findAll());
         return "booklist";

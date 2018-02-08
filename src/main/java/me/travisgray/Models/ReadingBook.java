@@ -28,25 +28,25 @@ public class ReadingBook {
 
     private String ISBN;
 
-    private String isCheckedOut;
+    private String checkoutstatus;
 
     public ReadingBook() {
     }
 
-    public ReadingBook(String title, String authour, String yearofpublication, String ISBN, String isCheckedOut) {
+    public ReadingBook(String title, String authour, String yearofpublication, String ISBN, String checkoutstatus) {
         this.title = title;
         this.authour = authour;
         this.yearofpublication = yearofpublication;
         this.ISBN = ISBN;
-        this.isCheckedOut = isCheckedOut;
+        this.checkoutstatus = checkoutstatus;
     }
 
-    public String getIsCheckedOut() {
-        return isCheckedOut;
+    public String getCheckoutstatus() {
+        return checkoutstatus;
     }
 
-    public void setIsCheckedOut(String isCheckedOut) {
-        this.isCheckedOut = isCheckedOut;
+    public void setCheckoutstatus(String checkoutstatus) {
+        this.checkoutstatus = checkoutstatus;
     }
 
     public String getISBN() {

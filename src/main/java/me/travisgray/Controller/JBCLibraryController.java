@@ -19,6 +19,9 @@ public class JBCLibraryController {
     @Autowired
     BookRepository bookRepository;
 
+    String defaultimage = "http://staceythewriter.com/temp/wp-content/uploads/2012/04/Books.jpg";
+
+
     @RequestMapping("/")
     public String showLibrarypage(Model model){
         model.addAttribute("books", bookRepository.findAll());
@@ -43,9 +46,16 @@ public class JBCLibraryController {
 //    Must pass created book entry here then save to repository model for thymeleaf loop
     @PostMapping("/AddBook")
     public String processBookForm(@Valid @ModelAttribute("readingbook") ReadingBook readingBook, BindingResult result, Model model){
+
         if (result.hasErrors()){
             return "addbookform";
         }
+
+//        Check to see if image value is empty if it is then set default image string for thymeleaf add form
+        if(readingBook.getImage().isEmpty()){
+            readingBook.setImage(defaultimage);
+        }
+
         bookRepository.save(readingBook);
         System.out.println("Test to see checkout status text field being stored correctly"+readingBook.getCheckoutstatus().equalsIgnoreCase("Borrow"));
 //        Need to make sure to add all books to model for thymeleaf access after this route is complete

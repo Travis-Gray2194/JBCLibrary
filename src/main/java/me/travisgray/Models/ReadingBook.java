@@ -34,16 +34,27 @@ public class ReadingBook {
 
     private String checkoutstatus;
 
+    private String image;
+
 
     public ReadingBook() {
     }
 
-    public ReadingBook(String title, String authour, String yearofpublication, String ISBN, String checkoutstatus) {
+    public ReadingBook(String title, String authour, String yearofpublication, String ISBN, String checkoutstatus, String image) {
         this.title = title;
         this.authour = authour;
         this.yearofpublication = yearofpublication;
         this.ISBN = ISBN;
         this.checkoutstatus = checkoutstatus;
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getYearofpublication() {

@@ -160,8 +160,15 @@
 
                 <li>
                     <p>
-                        <label for="ISBN Number">ISBN Number <span class="req">*</span></label>
+                        <label for="ISBN Number">ISBN Number</label>
                         <input th:field="${readingbook.ISBN}" type="ISBN" name="ISBN" placeholder="ISBN" />
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <label for="Image">Image URL</label>
+                        <input th:field="${readingbook.image}" type="text" placeholder="Please Enter Image URL" />
                     </p>
                 </li>
 

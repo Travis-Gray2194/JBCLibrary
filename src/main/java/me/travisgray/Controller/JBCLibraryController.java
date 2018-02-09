@@ -86,11 +86,7 @@ public class JBCLibraryController {
         return "booklist";
     }
 
-    @GetMapping("/update/booklist2/{id}")
-    public String showmodal(@PathVariable("id") long id, Model model){
-        model.addAttribute("readingbook",bookRepository.findAll());
-        return "booklist2";
-    }
+
 
 
 }

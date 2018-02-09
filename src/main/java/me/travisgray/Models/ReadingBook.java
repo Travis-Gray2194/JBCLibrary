@@ -19,13 +19,15 @@ public class ReadingBook {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @NotEmpty
+    @NotNull
     private String title;
 
+    @NotEmpty
     @NotNull
     private String authour;
 
-    @NotNull
-    @NotEmpty
+
     private String yearofpublication;
 
     private String ISBN;

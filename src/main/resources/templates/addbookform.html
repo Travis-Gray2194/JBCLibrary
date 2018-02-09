@@ -20,19 +20,20 @@
 
         <!--Dont forget form thymeleaf actions nesscary for thymeleaf to see route from controller and objects from model-->
         <form th:action="@{/AddBook}" th:object="${readingbook}" method="post">
+            <input type="hidden" th:field="*{id}" />
 
             <ul>
-
                 <li>
                     <p class="left">
-                        <input type="hidden" th:field="*{id}" />
                         <label for="booktitle" >Book Title</label>
                         <!--Make sure to use proper thymeleaf attributes for forms and fields not th:text-->
-                        <input th:field="${readingbook.title}" type="text" name="booktitle" placeholder="booktitle" />
+                        <input type="text" name="booktitle" placeholder="booktitle" th:field="*{title}">
+                        <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
                     </p>
                     <p class="left">
                         <label for="bookauthour">Book Authour</label>
-                        <input th:field="${readingbook.authour}"  type="text" name="bookauthour" placeholder="bookauthour" />
+                        <input type="text" name="bookauthour" placeholder="bookauthour" th:field="*{authour}">
+                        <span th:if="${#fields.hasErrors('authour')}" th:errors="*{authour}"></span>
                     </p>
                 </li>
 
@@ -40,6 +41,9 @@
                     <p>
                         <label for="yearofpublication">Year of Publication <span class="req">*</span></label>
                         <select th:field="${readingbook.yearofpublication}" type="yearofpublication" name="yearofpublication" placeholder="yearofpublication" id="yearofpublication" name="yearofpublication">
+                            <option value="Unavailable Date">Unavailable</option>
+                            <option value="2009">2009</option>
+                            <option value="2008">2008</option>
                             <option value="2007">2007</option>
                             <option value="2006">2006</option>
                             <option value="2005">2005</option>

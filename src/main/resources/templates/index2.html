@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index2style.css">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="row">
+    <div class="container-fluid">
+    <!-- A grey horizontal navbar that becomes vertical on small screens -->
+    <nav class="navbar navbar-expand-sm bg-light">
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/AddBook}">Add Book</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/ListBook}">Show our Books</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</div>
+
+
+<!--<nav class="nav" id="menu">-->
+    <!--<div class="wrap">-->
+        <!--<div class="brand">-->
+            <!--<img src="data:image/png;base64,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" alt="" />-->
+            <!--<span>Landing Page</span>-->
+        <!--</div>-->
+        <!--<button id="mobile-btn" class="hamburger-btn">-->
+            <!--<span class="hamburger-line"></span>-->
+            <!--<span class="hamburger-line"></span>-->
+            <!--<span class="hamburger-line"></span>-->
+        <!--</button>-->
+        <!--<ul class="top-menu" id="top-menu">-->
+            <!--<li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>-->
+            <!--<li><a href="#">Services</a></li>-->
+            <!--<li><a href="#">About</a></li>-->
+            <!--<li><a href="#">Contact</a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</nav>-->
+
+<header class="hero">
+    <div class="content">
+        <p>This Library Spring Boot Application  was built by Travis Gray using HTML,CSS and Bootstrap Framework 4!.
+        </p>
+    </div>
+</header>
+
+<main class="main">
+    <section class="feature">
+        <div class="tab-row">
+            <div class="col-12">
+                <h2>Feature Section</h2>
+                <p>Please Explore our Book Collection!</p>
+                <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/AddBook}" target="_self">
+                    Add a Book!
+                </a></p>
+
+                <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/ListBook}" target="_self">
+                    Borrow a Book!
+                </a></p>
+
+                <p class="lead text-center"><a class="btn btn-lg btn-info" th:href="@{/ListBook}" target="_self">
+                    Return a Book!
+                </a></p>
+            </div>
+        </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="row">
+        <div class="col-6">
+            <p><i class="fa fa-phone" aria-hidden="true"></i> +44 (0)123 456 789</p>
+            <p><i class="fa fa-envelope" aria-hidden="true"></i> info@landingpage.com</p>
+        </div>
+        <div class="col-6" style="text-align: right;">
+            <h3>Heading</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi a unde iste harum quis veritatis laudantium tempora, error veniam, incidunt?</p>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">&copy; 2017 Brand - <a href="#">Facebook</a> - <a href="#">Twitter</a></div>
+    </div>
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

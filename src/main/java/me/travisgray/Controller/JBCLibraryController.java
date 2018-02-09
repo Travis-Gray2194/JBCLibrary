@@ -22,7 +22,7 @@ public class JBCLibraryController {
     @RequestMapping("/")
     public String showLibrarypage(Model model){
         model.addAttribute("books", bookRepository.findAll());
-        return "index";
+        return "index2";
     }
 
     @GetMapping("/ListBook")
